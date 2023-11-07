@@ -58,7 +58,7 @@
                             <select class="form-select" required="">
                                 <option value="" selected="">Select...</option>
                                 <?php
-                                    require_once __DIR__ . "/scripts/platforms.php";
+                                    require __DIR__ . "/scripts/platforms.php";
                                 ?>
                             </select>
                         </div>
@@ -83,7 +83,7 @@
                             <select class="form-select" required="">
                                 <option value="" selected="">Select...</option>
                                 <?php
-                                    require_once __DIR__ . "/scripts/platforms.php";
+                                    require __DIR__ . "/scripts/platforms.php";
                                 ?>
                             </select>
                         </div>
