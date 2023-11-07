@@ -57,6 +57,9 @@
                             <label class="form-label">Platform</label>
                             <select class="form-select" required="">
                                 <option value="" selected="">Select...</option>
+                                <?php
+                                    require_once __DIR__ . "/scripts/platforms.php";
+                                ?>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -79,6 +82,9 @@
                             <label class="form-label">Platform</label>
                             <select class="form-select" required="">
                                 <option value="" selected="">Select...</option>
+                                <?php
+                                    require_once __DIR__ . "/scripts/platforms.php";
+                                ?>
                             </select>
                         </div>
                         <div class="mb-3">
