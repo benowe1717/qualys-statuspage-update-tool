@@ -73,6 +73,7 @@
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button">Reset Form</button>
                         </div>
                     </form>
                 </div>
@@ -106,6 +107,7 @@
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button">Reset Form</button>
                         </div>
                     </form>
                 </div>
