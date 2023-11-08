@@ -95,7 +95,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ticket Number</label>
-                            <input class="form-control" type="text" required="" minlength="3" pattern="\w{3}\-\d+$">
+                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Reference Link</label>
-                            <input class="form-control" type="text" required="" inputmode="url" pattern="^http(s)?\:">
+                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}">
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
