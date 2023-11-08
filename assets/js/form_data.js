@@ -15,6 +15,7 @@ function get_incident_title() {
                     reset_alert_box("incident");
                     $("#incident-alert").addClass("alert-success");
                     $("#incident-alert-text").text(arr.platform_name + ": " + title);
+                    $("#incident-copy").val(arr.platform_name + ": " + title);
                 } else {
                     reset_alert_box("incident");
                     $("#incident-alert").addClass("alert-danger");
@@ -105,6 +106,7 @@ function reset_alert_box(name) {
         $("#incident-alert").removeClass("alert-danger");
         $("#incident-alert").removeClass("alert-success");
         $("#incident-alert").html('<span id="incident-alert-text"></span>');
+        $("#incident-copy").val("");
     } else if(name == "maintenance") {
         $("#maintenance-alert").removeClass("alert-danger");
         $("#maintenance-alert").removeClass("alert-success");

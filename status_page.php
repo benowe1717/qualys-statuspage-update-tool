@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script src="/assets/js/reset_form.js"></script>
     <script src="/assets/js/form_data.js"></script>
 </head>
@@ -73,8 +74,11 @@
                             <label class="form-label">Message</label>
                             <textarea class="form-control" required="" id="incident-message"></textarea>
                         </div>
+                        <div class="mb-3">
+                            <textarea class="form-control visually-hidden" readonly disabled id="incident-copy"></textarea>
+                        </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_title();'>Copy Title to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" onclick='get_incident_title();'>Copy Title to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='get_incident_message();'>Copy Message to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
