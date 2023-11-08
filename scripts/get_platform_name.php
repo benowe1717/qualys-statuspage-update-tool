@@ -15,13 +15,18 @@
         if(is_array($platforms)) {
             foreach($platforms as $value => $option) {
                 if($value === $platform_id) {
-                    echo $option;
-                    break;
+                    echo(json_encode(["platform_name" => $option]));
+                    http_response_code(200);
+                    exit(0);
                 }
             }
+            echo(json_encode(["platform_name" => "None"]));
+            http_response_code(200);
+            exit(0);
         }
     } else {
         http_response_code(405);
+        exit(1);
     }
 
 ?>

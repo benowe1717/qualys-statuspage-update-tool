@@ -10,7 +10,7 @@ function get_incident_title() {
                 platform_id: platform
             },
             success: function(data) {
-                console.log(data)
+                console.log(data);
             }
         });
     });
