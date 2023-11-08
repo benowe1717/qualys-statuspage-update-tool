@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
     <script src="/assets/js/reset_form.js"></script>
+    <script src="/assets/js/validate_form.js"></script>
 </head>
 
 <body>
@@ -53,7 +54,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" role="tabpanel" id="tab-1">
-                    <form id="incident">
+                    <form id="incident" action="">
                         <div class="mb-3">
                             <label class="form-label">Platform</label>
                             <select class="form-select" required="">
@@ -65,18 +66,25 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3">
+                            <input class="form-control" type="text" required="" minlength="3" id="incident-title">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
                             <textarea class="form-control" required=""></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_title("#incident-title");'>Copy Title to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
+                    <div class="row m-3">
+                        <div class="col-12">
+                            <div class="alert" role="alert">
+                                <span id="alert-text"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="tab-2">
                     <form id="maintenance">
@@ -111,6 +119,13 @@
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>
+                    <div class="row m-3">
+                        <div class="col-12">
+                            <div class="alert" role="alert">
+                                <span id="alert-text"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
