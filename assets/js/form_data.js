@@ -2,7 +2,17 @@ function get_incident_title() {
     $(document).ready(function() {
         var platform = $("#incident-platform").val();
         var title = $("#incident-title").val();
-        console.log(platform + ": " + title);
+
+        $.ajax({
+            type: "POST",
+            url: "/scripts/get_platform_name.php",
+            data: {
+                platform_id: platform
+            },
+            success: function(data) {
+                console.log(data)
+            }
+        });
     });
 }
 
