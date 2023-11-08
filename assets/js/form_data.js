@@ -96,12 +96,12 @@ function get_maintenance_details() {
 }
 
 function build_maintenance_message(ticket, message, ref) {
-    var message = '<div class="scheduled_maintenance">';
-    var message = message + '<p class="ticket_no">' + ticket + '</p>';
-    var message = message + '<p class="message">' + message + '</p>';
-    var message = message + '<p class="reference_link">' + ref + '</p>';
-    var message = message + '</div>';
-    return message;
+    var msg = '<div class="scheduled_maintenance">';
+    var msg = msg + '<p class="ticket_no">' + ticket + '</p>';
+    var msg = msg + '<p class="message">' + message + '</p>';
+    var msg = msg + '<p class="reference_link">' + ref + '</p>';
+    var msg = msg + '</div>';
+    return msg;
 }
 
 function reset_alert_box(name) {
