@@ -9,10 +9,12 @@
     }
 
     $platforms = unserialize($redis->get("platforms"));
-    foreach($platforms as $value => $option) {
-
-        echo "<option value='{$value}'>{$option}</option>";
-
+    if(is_array($platforms)) {
+        foreach($platforms as $value => $option) {
+            echo "<option value='{$value}'>{$option}</option>";
+        }
+    } else {
+        echo "<option value=''>No platforms!</option>";
     }
 
 ?>
