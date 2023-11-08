@@ -4,4 +4,14 @@ function reset_form(form_id) {
     ).val("").prop("checked", false).prop(
         "selected", false
     );
+
+    if(form_id == "#incident") {
+        $("#incident-alert").removeClass("alert-danger");
+        $("#incident-alert").removeClass("alert-success");
+        $("#incident-alert").html('<span id="incident-alert-text"></span>');
+    } else if(form_id == "#maintenance") {
+        $("#maintenance-alert").removeClass("alert-danger");
+        $("#maintenance-alert").removeClass("alert-success");
+        $("#maintenance-alert").html('<span id="maintenance-alert-text"></span>');
+    }
 }

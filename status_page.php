@@ -7,7 +7,9 @@
     <title>Status Page Update</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="/assets/js/reset_form.js"></script>
+    <script src="/assets/js/form_data.js"></script>
 </head>
 
 <body>
@@ -53,10 +55,10 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" role="tabpanel" id="tab-1">
-                    <form id="incident">
+                    <form id="incident" action="">
                         <div class="mb-3">
                             <label class="form-label">Platform</label>
-                            <select class="form-select" required="">
+                            <select class="form-select" required="" id="incident-platform">
                                 <option value="" selected="">Select...</option>
                                 <?php
                                     require __DIR__ . "/scripts/platforms.php";
@@ -65,24 +67,31 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3">
+                            <input class="form-control" type="text" required="" minlength="3" id="incident-title">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control" required=""></textarea>
+                            <textarea class="form-control" required="" id="incident-message"></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_title();'>Copy Title to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_message();'>Copy Message to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
+                    <div class="row m-3">
+                        <div class="col-12">
+                            <div class="alert" role="alert" id="incident-alert">
+                                <span id="incident-alert-text"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="tab-2">
                     <form id="maintenance">
                         <div class="mb-3">
                             <label class="form-label">Platform</label>
-                            <select class="form-select" required="">
+                            <select class="form-select" required="" id="maintenance-platform">
                                 <option value="" selected="">Select...</option>
                                 <?php
                                     require __DIR__ . "/scripts/platforms.php";
@@ -91,31 +100,37 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3">
+                            <input class="form-control" type="text" required="" minlength="3" id="maintenance-title">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ticket Number</label>
-                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$">
+                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$" id="maintenance-ticket">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control" required=""></textarea>
+                            <textarea class="form-control" required="" id="maintenance-message"></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Reference Link</label>
-                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}">
+                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link">
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_title();'>Copy Title to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_details();'>Copy Message to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>
+                    <div class="row m-3">
+                        <div class="col-12">
+                            <div class="alert" role="alert" id="maintenance-alert">
+                                <span id="maintenance-alert-text"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
