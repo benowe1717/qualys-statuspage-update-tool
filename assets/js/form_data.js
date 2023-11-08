@@ -12,15 +12,15 @@ function get_incident_title() {
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.platform_name != "None") {
-                    $("#alert-text").html();
-                    $("#alert").removeClass("alert-danger");
-                    $("#alert").addClass("alert-success");
-                    $("#alert-text").html(arr.platform_name + ": " + title);
+                    $("#incident-alert-text").html();
+                    $("#incident-alert").removeClass("alert-danger");
+                    $("#incident-alert").addClass("alert-success");
+                    $("#incident-alert-text").html(arr.platform_name + ": " + title);
                 } else {
-                    $("#alert-text").html();
-                    $("#alert").removeClass("alert-success");
-                    $("#alert").addClass("alert-danger");
-                    $("#alert-text").html("Error getting platform name!");
+                    $("#incident-alert-text").html();
+                    $("#incident-alert").removeClass("alert-success");
+                    $("#incident-alert").addClass("alert-danger");
+                    $("#incident-alert-text").html("Error getting platform name!");
                 }
             }
         });
@@ -30,10 +30,10 @@ function get_incident_title() {
 function get_incident_message() {
     $(document).ready(function() {
         var message = $("#incident-message").val();
-        $("#alert-text").html();
-        $("#alert").removeClass("alert-danger");
-        $("#alert").addClass("alert-success");
-        $("#alert-text").html(message);
+        $("#incident-alert-text").html();
+        $("#incident-alert").removeClass("alert-danger");
+        $("#incident-alert").addClass("alert-success");
+        $("#incident-alert-text").html(message);
     });
 }
 
@@ -51,15 +51,15 @@ function get_maintenance_title() {
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.platform_name != "None") {
-                    $("#alert-text").html();
-                    $("#alert").removeClass("alert-danger");
-                    $("#alert").addClass("alert-success");
-                    $("#alert-text").html(arr.platform_name + ": " + title);
+                    $("#maintenance-alert-text").html();
+                    $("#maintenance-alert").removeClass("alert-danger");
+                    $("#maintenance-alert").addClass("alert-success");
+                    $("#maintenance-alert-text").html(arr.platform_name + ": " + title);
                 } else {
-                    $("#alert-text").html();
-                    $("#alert").removeClass("alert-success");
-                    $("#alert").addClass("alert-danger");
-                    $("#alert-text").html("Error getting platform name!");
+                    $("#maintenance-alert-text").html();
+                    $("#maintenance-alert").removeClass("alert-success");
+                    $("#maintenance-alert").addClass("alert-danger");
+                    $("#maintenance-alert-text").html("Error getting platform name!");
                 }
             }
         });
@@ -82,16 +82,16 @@ function get_maintenance_details() {
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.ticket_status == 1 && arr.ref_status == 1) {
-                    $("#alert-text").html();
-                    $("#alert").removeClass("alert-danger");
-                    $("#alert").addClass("alert-success");
+                    $("#maintenance-alert-text").html();
+                    $("#maintenance-alert").removeClass("alert-danger");
+                    $("#maintenance-alert").addClass("alert-success");
                     var formatted_message = build_maintenance_message(ticket, message, ref_link);
-                    $("#alert").html(formatted_message);
+                    $("#maintenance-alert").html(formatted_message);
                 } else {
-                    $("#alert-text").html();
-                    $("#alert").removeClass("alert-success");
-                    $("#alert").addClass("alert-danger");
-                    $("#alert-text").html("Ticket Number of Reference Link are invalid!");
+                    $("#maintenance-alert-text").html();
+                    $("#maintenance-alert").removeClass("alert-success");
+                    $("#maintenance-alert").addClass("alert-danger");
+                    $("#maintenance-alert-text").html("Ticket Number of Reference Link are invalid!");
                 }
             }
         });

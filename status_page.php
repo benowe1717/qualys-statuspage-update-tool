@@ -81,8 +81,8 @@
                     </form>
                     <div class="row m-3">
                         <div class="col-12">
-                            <div class="alert" role="alert">
-                                <span id="alert-text"></span>
+                            <div class="alert" role="alert" id="incident-alert">
+                                <span id="incident-alert-text"></span>
                             </div>
                         </div>
                     </div>
@@ -122,8 +122,8 @@
                     </form>
                     <div class="row m-3">
                         <div class="col-12">
-                            <div class="alert" role="alert">
-                                <span id="alert-text"></span>
+                            <div class="alert" role="alert" id="maintenance-alert">
+                                <span id="maintenance-alert-text"></span>
                             </div>
                         </div>
                     </div>
