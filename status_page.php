@@ -76,11 +76,11 @@
                             <textarea class="form-control" required="" id="incident-message"></textarea>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control visually-hidden" readonly disabled id="incident-copy"></textarea>
+                            <textarea class="form-control visually-hidden" readonly id="incident-copy"></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn btn-primary border-light" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" onclick='get_incident_title();'>Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_message();'>Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" onclick='get_incident_message();'>Copy Message to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
@@ -119,9 +119,12 @@
                             <label class="form-label">Reference Link</label>
                             <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link">
                         </div>
+                        <div class="mb-3">
+                            <textarea class="form-control visually-hidden" readonly id="maintenance-copy"></textarea>
+                        </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_title();'>Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_details();'>Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#maintenance-copy" data-clipboard-action="copy"  onclick='get_maintenance_title();'>Copy Title to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#maintenance-copy" data-clipboard-action="copy"  onclick='get_maintenance_details();'>Copy Message to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>

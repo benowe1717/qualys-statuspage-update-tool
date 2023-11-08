@@ -32,6 +32,7 @@ function get_incident_message() {
         reset_alert_box("incident");
         $("#incident-alert").addClass("alert-success");
         $("#incident-alert-text").text(message);
+        $("#incident-copy").val(message);
     });
 }
 
@@ -52,6 +53,7 @@ function get_maintenance_title() {
                     reset_alert_box("maintenance");
                     $("#maintenance-alert").addClass("alert-success");
                     $("#maintenance-alert-text").text(arr.platform_name + ": " + title);
+                    $("#maintenance-copy").val(arr.platform_name + ": " + title);
                 } else {
                     reset_alert_box("maintenance");
                     $("#maintenance-alert").addClass("alert-danger");
@@ -82,6 +84,7 @@ function get_maintenance_details() {
                     $("#maintenance-alert").addClass("alert-success");
                     var formatted_message = build_maintenance_message(ticket, message, ref_link);
                     $("#maintenance-alert").text(formatted_message);
+                    $("#maintenance-copy").val(formatted_message);
                 } else {
                     reset_alert_box("maintenance");
                     $("#maintenance-alert").addClass("alert-danger");
