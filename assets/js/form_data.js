@@ -15,12 +15,12 @@ function get_incident_title() {
                     $("#incident-alert-text").html();
                     $("#incident-alert").removeClass("alert-danger");
                     $("#incident-alert").addClass("alert-success");
-                    $("#incident-alert-text").html(arr.platform_name + ": " + title);
+                    $("#incident-alert-text").text(arr.platform_name + ": " + title);
                 } else {
                     $("#incident-alert-text").html();
                     $("#incident-alert").removeClass("alert-success");
                     $("#incident-alert").addClass("alert-danger");
-                    $("#incident-alert-text").html("Error getting platform name!");
+                    $("#incident-alert-text").text("Error getting platform name!");
                 }
             }
         });
@@ -33,7 +33,7 @@ function get_incident_message() {
         $("#incident-alert-text").html();
         $("#incident-alert").removeClass("alert-danger");
         $("#incident-alert").addClass("alert-success");
-        $("#incident-alert-text").html(message);
+        $("#incident-alert-text").text(message);
     });
 }
 
@@ -54,12 +54,12 @@ function get_maintenance_title() {
                     $("#maintenance-alert-text").html();
                     $("#maintenance-alert").removeClass("alert-danger");
                     $("#maintenance-alert").addClass("alert-success");
-                    $("#maintenance-alert-text").html(arr.platform_name + ": " + title);
+                    $("#maintenance-alert-text").text(arr.platform_name + ": " + title);
                 } else {
                     $("#maintenance-alert-text").html();
                     $("#maintenance-alert").removeClass("alert-success");
                     $("#maintenance-alert").addClass("alert-danger");
-                    $("#maintenance-alert-text").html("Error getting platform name!");
+                    $("#maintenance-alert-text").text("Error getting platform name!");
                 }
             }
         });
@@ -86,12 +86,12 @@ function get_maintenance_details() {
                     $("#maintenance-alert").removeClass("alert-danger");
                     $("#maintenance-alert").addClass("alert-success");
                     var formatted_message = build_maintenance_message(ticket, message, ref_link);
-                    $("#maintenance-alert").html(formatted_message);
+                    $("#maintenance-alert").text(formatted_message);
                 } else {
                     $("#maintenance-alert-text").html();
                     $("#maintenance-alert").removeClass("alert-success");
                     $("#maintenance-alert").addClass("alert-danger");
-                    $("#maintenance-alert-text").html("Ticket Number of Reference Link are invalid!");
+                    $("#maintenance-alert-text").text("Ticket Number of Reference Link are invalid!");
                 }
             }
         });
