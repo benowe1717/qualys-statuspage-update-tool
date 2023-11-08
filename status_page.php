@@ -7,6 +7,7 @@
     <title>Status Page Update</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <script src="/assets/js/reset_form.js"></script>
 </head>
 
 <body>
@@ -52,7 +53,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" role="tabpanel" id="tab-1">
-                    <form>
+                    <form id="incident">
                         <div class="mb-3">
                             <label class="form-label">Platform</label>
                             <select class="form-select" required="">
@@ -73,11 +74,12 @@
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="tab-2">
-                    <form>
+                    <form id="maintenance">
                         <div class="mb-3">
                             <label class="form-label">Platform</label>
                             <select class="form-select" required="">
@@ -93,7 +95,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ticket Number</label>
-                            <input class="form-control" type="text" required="" minlength="3" pattern="\w{3}\-\d+$">
+                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
@@ -101,17 +103,19 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Reference Link</label>
-                            <input class="form-control" type="text" required="" inputmode="url" pattern="^http(s)?\:">
+                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}">
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn btn-primary border-light" type="button">Copy Title to Clipboard</button>
                             <button class="btn btn-primary border-light" type="button">Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
