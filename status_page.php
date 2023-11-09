@@ -124,8 +124,8 @@
                             <textarea class="form-control visually-hidden" readonly id="maintenance-copy"></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#maintenance-copy" data-clipboard-action="copy"  onclick='get_maintenance_title();'>Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#maintenance-copy" data-clipboard-action="copy"  onclick='get_maintenance_details();'>Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_title();'>Generate Title</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_details();'>Generate Message</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>
@@ -134,6 +134,7 @@
                             <div class="alert" role="alert" id="maintenance-alert">
                                 <span id="maintenance-alert-text"></span>
                             </div>
+                            <button class="btn btn-primary visually-hidden" type="button" data-clipboard-target="#maintenance-copy" data-clipboard-action="copy" id="maintenance-copy-button">Copy to Clipboard</button>
                         </div>
                     </div>
                 </div>
