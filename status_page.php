@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="dark" lang="en" data-bss-forced-theme="dark">
+<html data-bs-theme="light" lang="en" style="--bs-body-color: #1D2737;--bs-body-bg: #F7FAFC;--bs-primary: #2E8BE0;--bs-primary-rgb: 46,139,224;--bs-danger: #ED2E26;--bs-danger-rgb: 237,46,38;">
 
 <head>
     <meta charset="utf-8">
