@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script src="/assets/js/reset_form.js"></script>
     <script src="/assets/js/form_data.js"></script>
+    <script src="/assets/js/clipboard.js"></script>
 </head>
 
 <body>
@@ -73,9 +75,12 @@
                             <label class="form-label">Message</label>
                             <textarea class="form-control" required="" id="incident-message"></textarea>
                         </div>
+                        <div class="mb-3">
+                            <textarea class="form-control visually-hidden" readonly id="incident-copy"></textarea>
+                        </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_title();'>Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_message();'>Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_title();'>Generate Title</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_message();'>Generate Message</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
@@ -84,6 +89,7 @@
                             <div class="alert" role="alert" id="incident-alert">
                                 <span id="incident-alert-text"></span>
                             </div>
+                            <button class="btn btn-primary visually-hidden" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" id="incident-copy-button">Copy to Clipboard</button>
                         </div>
                     </div>
                 </div>
@@ -114,9 +120,12 @@
                             <label class="form-label">Reference Link</label>
                             <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link">
                         </div>
+                        <div class="mb-3">
+                            <textarea class="form-control visually-hidden" readonly id="maintenance-copy"></textarea>
+                        </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_title();'>Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_details();'>Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_title();'>Generate Title</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_maintenance_details();'>Generate Message</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>
@@ -125,6 +134,7 @@
                             <div class="alert" role="alert" id="maintenance-alert">
                                 <span id="maintenance-alert-text"></span>
                             </div>
+                            <button class="btn btn-primary visually-hidden" type="button" data-clipboard-target="#maintenance-copy" data-clipboard-action="copy" id="maintenance-copy-button">Copy to Clipboard</button>
                         </div>
                     </div>
                 </div>
