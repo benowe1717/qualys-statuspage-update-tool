@@ -89,7 +89,7 @@
                             <div class="alert" role="alert" id="incident-alert">
                                 <span id="incident-alert-text"></span>
                             </div>
-                            <button class="btn btn-primary visually-hidden" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy">Copy to Clipboard</button>
+                            <button class="btn btn-primary visually-hidden" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" id="incident-copy-button">Copy to Clipboard</button>
                         </div>
                     </div>
                 </div>

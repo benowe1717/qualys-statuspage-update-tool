@@ -16,6 +16,7 @@ function get_incident_title() {
                     $("#incident-alert").addClass("alert-success");
                     $("#incident-alert-text").text(arr.platform_name + ": " + title);
                     $("#incident-copy").val(arr.platform_name + ": " + title);
+                    $("#incident-copy-button").prop("hidden", false);
                 } else {
                     reset_alert_box("incident");
                     $("#incident-alert").addClass("alert-danger");
