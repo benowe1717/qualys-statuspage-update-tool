@@ -79,8 +79,8 @@
                             <textarea class="form-control visually-hidden" readonly id="incident-copy"></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" onclick='get_incident_title();'>Copy Title to Clipboard</button>
-                            <button class="btn btn-primary border-light" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy" onclick='get_incident_message();'>Copy Message to Clipboard</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_title();'>Generate Title</button>
+                            <button class="btn btn-primary border-light" type="button" onclick='get_incident_message();'>Generate Message</button>
                             <button class="btn btn-primary border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
@@ -89,6 +89,7 @@
                             <div class="alert" role="alert" id="incident-alert">
                                 <span id="incident-alert-text"></span>
                             </div>
+                            <button class="btn btn-primary visually-hidden" type="button" data-clipboard-target="#incident-copy" data-clipboard-action="copy">Copy to Clipboard</button>
                         </div>
                     </div>
                 </div>
