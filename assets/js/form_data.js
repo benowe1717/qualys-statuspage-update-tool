@@ -109,21 +109,19 @@ function build_maintenance_message(ticket, message, ref) {
 }
 
 function reset_alert_box(name) {
-    $(document).ready(function() {
-        if(name == "incident") {
-            $("#incident-alert").removeClass("alert-danger");
-            $("#incident-alert").removeClass("alert-success");
-            $("#incident-alert").html('<span id="incident-alert-text"></span>');
-            $("#incident-copy").val("");
-            $("#incident-copy-button").text("Copy to Clipboard");
-            $("#incident-copy-button").addClass("visually-hidden");
-        } else if(name == "maintenance") {
-            $("#maintenance-alert").removeClass("alert-danger");
-            $("#maintenance-alert").removeClass("alert-success");
-            $("#maintenance-alert").html('<span id="maintenance-alert-text"></span>');
-            $("#maintenance-copy").val("");
-            $("#maintenance-copy-button").text("Copy to Clipboard");
-            $("#maintenance-copy-button").addClass("visually-hidden");
-        }
-    });
+    if(name == "incident") {
+        $("#incident-alert").removeClass("alert-danger");
+        $("#incident-alert").removeClass("alert-success");
+        $("#incident-alert").html('<span id="incident-alert-text"></span>');
+        $("#incident-copy").val("");
+        $("#incident-copy-button").text("Copy to Clipboard");
+        $("#incident-copy-button").addClass("visually-hidden");
+    } else if(name == "maintenance") {
+        $("#maintenance-alert").removeClass("alert-danger");
+        $("#maintenance-alert").removeClass("alert-success");
+        $("#maintenance-alert").html('<span id="maintenance-alert-text"></span>');
+        $("#maintenance-copy").val("");
+        $("#maintenance-copy-button").text("Copy to Clipboard");
+        $("#maintenance-copy-button").addClass("visually-hidden");
+    }
 }
