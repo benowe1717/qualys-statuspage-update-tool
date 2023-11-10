@@ -78,7 +78,8 @@ function get_maintenance_details() {
             url: "/scripts/validate_maintenance_details.php",
             data: {
                 ticket: ticket,
-                ref: ref_link
+                ref: ref_link,
+                message: message
             },
             success: function(data) {
                 var arr = JSON.parse(data);
