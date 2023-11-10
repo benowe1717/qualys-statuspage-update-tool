@@ -40,7 +40,7 @@
         } else {
             if(validate_url($ref_link)) {
                 $arr["ref_status"] = 1;
-                $urls[] = $url;
+                $urls[] = $ref_link;
             }
         }
 
