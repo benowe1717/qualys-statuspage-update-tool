@@ -67,11 +67,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3" id="incident-title">
+                            <input class="form-control" type="text" required="" minlength="3" id="incident-title" placeholder="QualysGuard UI is not accessible (IM-11285)">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control" required="" id="incident-message"></textarea>
+                            <textarea class="form-control" required="" id="incident-message" placeholder="Users are unable to access QualysGuard for KSA Platform 1. Cloud Platform Operations team is actively investigating and further updates will be shared as they are received."></textarea>
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control visually-hidden" readonly id="incident-copy"></textarea>
@@ -104,19 +104,19 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3" id="maintenance-title">
+                            <input class="form-control" type="text" required="" minlength="3" id="maintenance-title" placeholder="File Integrity Monitoring (FIM) 3.8.0.0 Release Notification (CMB-215218)">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ticket Number</label>
-                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$" id="maintenance-ticket">
+                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$" id="maintenance-ticket" placeholder="CMB-215218">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control" required="" id="maintenance-message"></textarea>
+                            <textarea class="form-control" required="" id="maintenance-message" placeholder="A new release of File Integrity Monitoring 3.8.0.0 (FIM) is going to be released into production. The deployment is completely transparent to users, and no impact is expected."></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Reference Link</label>
-                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link">
+                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link" placeholder="https://www.qualys.com/docs/release-notes/qualys-file-integrity-monitoring-3.8-release-notes.pdf">
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control visually-hidden" readonly id="maintenance-copy"></textarea>
