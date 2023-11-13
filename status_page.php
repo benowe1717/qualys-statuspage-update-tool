@@ -11,7 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script src="/assets/js/reset_form.js"></script>
-    <script src="/assets/js/form_data.js"></script>
+    <!-- <script src="/assets/js/form_data.js"></script> -->
+    <script src="/assets/js/incident_title.js"></script>
     <script src="/assets/js/clipboard.js"></script>
 </head>
 
@@ -77,7 +78,7 @@
                             <textarea class="form-control visually-hidden" readonly id="incident-copy"></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn border-light" type="button" onclick='get_incident_title();'>Generate Title</button>
+                            <button class="btn border-light" type="button" id="incident-title-button">Generate Title</button>
                             <button class="btn border-light" type="button" onclick='get_incident_message();'>Generate Message</button>
                             <button class="btn btn-reset border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
