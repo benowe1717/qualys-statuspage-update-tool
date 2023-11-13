@@ -67,12 +67,12 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3" id="incident-title" placeholder="QualysGuard UI is not accessible (IM-11285)">
+                            <label class="form-label" for="incident-title">Title</label>
+                            <input class="form-control" type="text" required="" minlength="3" id="incident-title" name="incident-title" placeholder="QualysGuard UI is not accessible (IM-11285)">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" required="" id="incident-message" placeholder="Users are unable to access QualysGuard for KSA Platform 1. Cloud Platform Operations team is actively investigating and further updates will be shared as they are received."></textarea>
+                            <label class="form-label" for="incident-message">Message</label>
+                            <textarea class="form-control" required="" id="incident-message" name="incident-message" placeholder="Users are unable to access QualysGuard for KSA Platform 1. Cloud Platform Operations team is actively investigating and further updates will be shared as they are received."></textarea>
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control visually-hidden" readonly id="incident-copy"></textarea>
