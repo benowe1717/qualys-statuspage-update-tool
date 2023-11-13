@@ -78,22 +78,29 @@ function get_maintenance_details() {
             url: "/scripts/validate_maintenance_details.php",
             data: {
                 ticket: ticket,
-                ref: ref_link
+                ref: ref_link,
+                message: message
             },
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.ticket_status == 1 && arr.ref_status == 1) {
                     reset_alert_box("maintenance");
                     $("#maintenance-alert").addClass("alert-success");
-                    var formatted_message = build_maintenance_message(ticket, message, ref_link);
-                    $("#maintenance-alert").text(formatted_message);
-                    $("#maintenance-copy").val(formatted_message);
+                    // var formatted_message = build_maintenance_message(ticket, message, ref_link);
+                    $("#maintenance-alert").text(arr.message);
+                    $("#maintenance-copy").val(arr.message);
                     $("#maintenance-copy-button").removeClass("visually-hidden");
                 } else {
                     reset_alert_box("maintenance");
                     $("#maintenance-alert").addClass("alert-danger");
-                    $("#maintenance-alert-text").text("Ticket Number of Reference Link are invalid!");
+                    $("#maintenance-alert-text").text("Ticket Number or Reference Link are invalid!");
                 }
+            },
+            error: function(data) {
+                var arr = JSON.parse(data);
+                reset_alert_box("maintenance");
+                $("#maintenance-alert").addClass("alert-danger");
+                $("#maintenance-alert-text").text(arr.message);
             }
         });
     });
