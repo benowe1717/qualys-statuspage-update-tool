@@ -2,7 +2,7 @@ $(document).ready(function() {
     $("#incident-title-button").on("click", function() {
         var form = $(this).parents("form");
         var form_data = $(form).serializeArray();
-        var split = this.split("-");
+        var split = $(this)[0].attributes.id.split("-");
 
         if(split[0] === "incident") {
             var span = "incident-alert-text";
