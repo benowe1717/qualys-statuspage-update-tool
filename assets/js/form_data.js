@@ -93,7 +93,7 @@ function get_maintenance_details() {
                 } else {
                     reset_alert_box("maintenance");
                     $("#maintenance-alert").addClass("alert-danger");
-                    $("#maintenance-alert-text").text("Ticket Number of Reference Link are invalid!");
+                    $("#maintenance-alert-text").text("Ticket Number or Reference Link are invalid!");
                 }
             },
             error: function(data) {
