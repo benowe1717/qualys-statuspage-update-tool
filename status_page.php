@@ -11,9 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script src="/assets/js/reset_form.js"></script>
-    <!-- <script src="/assets/js/form_data.js"></script> -->
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/incident_title.js"></script>
+    <script src="/assets/js/incident_message.js"></script>
     <script src="/assets/js/clipboard.js"></script>
 </head>
 

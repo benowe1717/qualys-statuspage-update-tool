@@ -3,7 +3,7 @@ function reset_form(form_id) {
         ":button, :submit, :reset, :hidden"
     ).val("").prop("checked", false).prop(
         "selected", false
-    );
+    ).toggleClass("form-error", false);
 
     if(form_id == "#incident") {
         $("#incident-alert").removeClass("alert-danger");
