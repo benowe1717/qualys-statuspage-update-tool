@@ -80,7 +80,7 @@
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
                             <button class="btn border-light" type="button" id="incident-title-button">Generate Title</button>
-                            <button class="btn border-light" type="button" onclick='get_incident_message();'>Generate Message</button>
+                            <button class="btn border-light" type="button" id="incident-message-button">Generate Message</button>
                             <button class="btn btn-reset border-light" type="button" onclick='reset_form("#incident");'>Reset Form</button>
                         </div>
                     </form>
