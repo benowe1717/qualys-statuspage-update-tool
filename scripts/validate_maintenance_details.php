@@ -57,6 +57,12 @@
             }
             $msg = $msg . "</div>";
             $arr["message"] = $msg;
+        } else {
+            $arr["status_code"] = 400;
+            $arr["message"] = "Ticket Number or Reference Link are invalid!";
+            echo(json_encode($arr));
+            http_response_code(400);
+            exit(0);
         }
 
         echo(json_encode($arr));
