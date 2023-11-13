@@ -41,9 +41,10 @@
             }
             $arr["ref_status"] = 1;
         } else {
-            if(validate_url($ref_link)) {
+            $is_url = validate_url($url);
+            if($is_url) {
                 $arr["ref_status"] = 1;
-                $urls[] = $ref_link;
+                $urls[] = $is_url;
             }
         }
 
