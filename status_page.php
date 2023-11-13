@@ -58,8 +58,8 @@
                 <div class="tab-pane active" role="tabpanel" id="tab-1">
                     <form id="incident" action="">
                         <div class="mb-3">
-                            <label class="form-label">Platform</label>
-                            <select class="form-select" required="" id="incident-platform">
+                            <label class="form-label" for="incident-platform">Platform</label>
+                            <select class="form-select" required="" id="incident-platform" name="incident-platform">
                                 <option value="" selected="">Select...</option>
                                 <?php
                                     require __DIR__ . "/scripts/platforms.php";
