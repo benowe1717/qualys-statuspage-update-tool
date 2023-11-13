@@ -9,8 +9,10 @@
     }
 
     function validate_url(string $url) {
-        if(preg_match("/^(http|https)\:.*?$/", $url)) {
-            return TRUE;
+        if(preg_match("/^(?P<url>(http|https)\:.*?)(http|https|$)/", $url, $matches)) {
+            if(isset($matches["url"])) {
+                return $matches["url"];
+            }
         } else {
             return FALSE;
         }
@@ -30,10 +32,11 @@
             $refs = explode(",", $ref_link);
             foreach($refs as $ref) {
                 $url = trim($ref);
-                if(!validate_url($url)) {
+                $is_url = validate_url($url);
+                if(!$is_url) {
                     break;
                 } else {
-                    $urls[] = $url;
+                    $urls[] = $is_url;
                 }
             }
             $arr["ref_status"] = 1;
