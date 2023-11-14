@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="dark" lang="en" data-bss-forced-theme="dark">
+<html data-bs-theme="light" lang="en" style="--bs-body-color: #1D2737;--bs-body-bg: #F7FAFC;--bs-primary: #2E8BE0;--bs-primary-rgb: 46,139,224;--bs-danger: #ED2E26;--bs-danger-rgb: 237,46,38;">
 
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en" style="--bs-body-color: #1D2737;--bs-body-bg: #F7FAFC;--bs-primary: #2E8BE0;--bs-primary-rgb: 46,139,224;--bs-danger: #ED2E26;--bs-danger-rgb: 237,46,38;">
@@ -42,27 +42,53 @@
             </div>
         </div>
     </nav>
-    <div class="container m-3">
+    <div class="container-fluid m-3">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center">Status Page Update Tool</h2>
-                <h3 class="text-center">Patch Notes</h3>
+                <h2>Status Page Update Tool</h2>
+                <p>Current Version: <?php require_once __DIR__ . "/scripts/get_current_version.php"; ?></p>
             </div>
         </div>
     </div>
-    <div class="container m-3">
-        <div class="row">
-            <div class="col-md-6">
-                <h4>Current Version: <?php require_once __DIR__ . "/scripts/get_current_version.php"; ?></h4>
-                <ul class="list-group">
-                    <li class="list-group-item">Added an Incident Update feature</li>
-                    <li class="list-group-item">Added a Scheduled Maintenance feature</li>
-                    <li class="list-group-item">Added a "Copy to Clipboard!" button</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h4>Known Issues: </h4>
-                <ul class="list-group"></ul>
+    <div class="container-fluid m-3">
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Patch Notes</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Known Issues</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span>- Added an Incident Update feature</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>- Added a Scheduled Maintenance Update feature</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>- Added a "Copy to Clipboard!" button</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span>No known issues! :)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
