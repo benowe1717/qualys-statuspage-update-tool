@@ -13,8 +13,3 @@ function reset_alert_box(name) {
         $("#maintenance-copy-button").text("Copy to Clipboard");
     }
 }
-
-function display_error(id) {
-    // toggle error class on
-    // display error message
-}
