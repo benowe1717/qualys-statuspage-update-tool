@@ -11,9 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script src="/assets/js/reset_form.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/incident_title.js"></script>
-    <script src="/assets/js/incident_message.js"></script>
+    <script src="/assets/js/statuspage.js"></script>
+    <script src="/assets/js/incident.js"></script>
+    <script src="/assets/js/maintenance.js"></script>
     <script src="/assets/js/clipboard.js"></script>
 </head>
 
@@ -97,7 +97,7 @@
                     <form id="maintenance">
                         <div class="mb-3">
                             <label class="form-label">Platform</label>
-                            <select class="form-select" required="" id="maintenance-platform">
+                            <select class="form-select" required="" id="maintenance-platform" name="maintenance-platform">
                                 <option value="" selected="">Select...</option>
                                 <?php
                                     require __DIR__ . "/scripts/platforms.php";
@@ -106,26 +106,26 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input class="form-control" type="text" required="" minlength="3" id="maintenance-title" placeholder="File Integrity Monitoring (FIM) 3.8.0.0 Release Notification (CMB-215218)">
+                            <input class="form-control" type="text" required="" minlength="3" id="maintenance-title" name="maintenance-title" placeholder="File Integrity Monitoring (FIM) 3.8.0.0 Release Notification (CMB-215218)">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ticket Number</label>
-                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$" id="maintenance-ticket" placeholder="CMB-215218">
+                            <input class="form-control" type="text" required="" minlength="3" pattern="^[A-Z]{3}-[0-9]+$" id="maintenance-ticket" name="maintenance-ticket" placeholder="CMB-215218">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control" required="" id="maintenance-message" placeholder="A new release of File Integrity Monitoring 3.8.0.0 (FIM) is going to be released into production. The deployment is completely transparent to users, and no impact is expected."></textarea>
+                            <textarea class="form-control" required="" id="maintenance-message" name="maintenance-message" placeholder="A new release of File Integrity Monitoring 3.8.0.0 (FIM) is going to be released into production. The deployment is completely transparent to users, and no impact is expected."></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Reference Link</label>
-                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link" placeholder="https://www.qualys.com/docs/release-notes/qualys-file-integrity-monitoring-3.8-release-notes.pdf">
+                            <input class="form-control" type="text" required="" inputmode="url" pattern="^(http|https):.{3,}" id="maintenance-ref-link" name="maintenance-ref-link" placeholder="https://www.qualys.com/docs/release-notes/qualys-file-integrity-monitoring-3.8-release-notes.pdf">
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control visually-hidden" readonly id="maintenance-copy"></textarea>
                         </div>
                         <div class="btn-group border rounded-pill" role="group">
-                            <button class="btn border-light" type="button" onclick='get_maintenance_title();'>Generate Title</button>
-                            <button class="btn border-light" type="button" onclick='get_maintenance_details();'>Generate Message</button>
+                            <button class="btn border-light" type="button" id="maintenance-title-button">Generate Title</button>
+                            <button class="btn border-light" type="button" id="maintenance-message-button">Generate Message</button>
                             <button class="btn btn-reset border-light" type="button" onclick='reset_form("#maintenance");'>Reset Form</button>
                         </div>
                     </form>
