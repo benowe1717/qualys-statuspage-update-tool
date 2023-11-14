@@ -97,7 +97,8 @@ var incident_post = {
     },
 
     get_platform_name: function(platform_id) {
-        $.ajax({
+        var response = -1;
+        response = $.ajax({
             type: "POST",
             url: "/scripts/get_platform_name.php",
             data: {
@@ -106,9 +107,7 @@ var incident_post = {
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.platform_name != "None") {
-                    return arr.platform_name;
-                } else {
-                    return -1;
+                    response = arr.platform_name;
                 }
             },
             error: function(data) {
@@ -118,9 +117,10 @@ var incident_post = {
                     incident_post.config.copy_button, msg
                 );
                 console.log(data);
-                return -1;
+                response = -1;
             }
-        })
+        });
+        return response;
     }
 }
 

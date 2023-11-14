@@ -111,7 +111,8 @@ var maintenance_post = {
     },
 
     get_platform_name: function(platform_id) {
-        $.ajax({
+        var response = -1;
+        response = $.ajax({
             type: "POST",
             url: "/scripts/get_platform_name.php",
             data: {
@@ -120,9 +121,7 @@ var maintenance_post = {
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.platform_name != "None") {
-                    return arr.platform_name;
-                } else {
-                    return -1;
+                    response = arr.platform_name;
                 }
             },
             error: function(data) {
@@ -132,13 +131,15 @@ var maintenance_post = {
                     maintenance_post.config.copy_button, msg
                 );
                 console.log(data);
-                return -1;
+                response = -1;
             }
-        })
+        });
+        return response;
     },
 
     get_maintenance_details: function(ticket, ref, message) {
-        $.ajax({
+        var response = -1;
+        response = $.ajax({
             type: "POST",
             url: "/scripts/validate_maintenance_details.php",
             data: {
@@ -149,9 +150,7 @@ var maintenance_post = {
             success: function(data) {
                 var arr = JSON.parse(data);
                 if(arr.ticket_status === 1 && arr.ref_status === 1) {
-                    return arr.message;
-                } else {
-                    return -1;
+                    response = arr.message;
                 }
             },
             error: function(data) {
@@ -161,9 +160,10 @@ var maintenance_post = {
                     maintenance_post.config.copy_button, arr.message
                 );
                 console.log(data);
-                return -1;
+                response = -1;
             }
-        })
+        });
+        return response;
     }
 }
 
