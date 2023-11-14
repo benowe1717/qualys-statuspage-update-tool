@@ -1,6 +1,6 @@
 <?php
 
-    $current_version_file = __DIR__ . "/current_version";
+    $current_version_file = __DIR__ . "/../current_version";
 
     if(is_file($current_version_file)) {
         $contents = file_get_contents($current_version_file);
