@@ -66,13 +66,7 @@
                         <div class="col-md-12">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <span>- Added an Incident Update feature</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>- Added a Scheduled Maintenance Update feature</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>- Added a "Copy to Clipboard!" button</span>
+                                    <span>- Added more client-side validation through red highlighting of invalid/empty form fields</span>
                                 </li>
                             </ul>
                         </div>
