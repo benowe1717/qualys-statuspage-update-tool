@@ -43,9 +43,13 @@ var maintenance_post = {
             if(errors === 0) {
                 var platform_id = maintenance_post.form_data[0].value;
                 var title = maintenance_post.form_data[1].value;
-                maintenance_post.get_platform_name(platform_id, title, function(output) {
+                maintenance_post.get_platform_name(platform_id, function(output) {
                     var arr = JSON.parse(output);
-                    console.log(arr);
+                    var msg = maintenance_post.format_title(arr.platform_name, title);
+                    maintenance_post.show_success_message(
+                        maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
+                        maintenance_post.config.copy_button, msg
+                    );
                 });
             }
         });
@@ -101,7 +105,12 @@ var maintenance_post = {
         }
     },
 
-    get_platform_name: function(platform_id, title, handle_data) {
+    format_title: function(platform_name, title) {
+        var message = platform_name + ": " + title;
+        return message;
+    },
+
+    get_platform_name: function(platform_id, handle_data) {
         $.ajax({
             type: "POST",
             url: "/scripts/get_platform_name.php",
@@ -109,19 +118,6 @@ var maintenance_post = {
                 platform_id: platform_id
             },
             success: function(data) {
-                // var arr = JSON.parse(data);
-                // if(arr.platform_name != "None") {
-                //     var msg = platform_name + ": " + title;
-                //     maintenance_post.statuspage.show_success_message(
-                //         maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                //         maintenance_post.config.copy_button, msg
-                //     );
-                // } else {
-                //     var msg = "Error getting platform name!";
-                //     maintenance_post.statuspage.show_error_message(
-                //         maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                //         maintenance_post.config.copy_button, msg
-                //     );
                 handle_data(data);
             },
             error: function(data) {
