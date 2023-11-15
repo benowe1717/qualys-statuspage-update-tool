@@ -41,21 +41,12 @@ var maintenance_post = {
             
             maintenance_post.errors(errors);
             if(errors === 0) {
-                var platform_name = maintenance_post.get_platform_name(maintenance_post.form_data[0].value);
+                var platform_id = maintenance_post.form_data[0].value;
                 var title = maintenance_post.form_data[1].value;
-                if(platform_name !== -1) {
-                    var msg = platform_name + ": " + title;
-                    maintenance_post.statuspage.show_success_message(
-                        maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                        maintenance_post.config.copy_button, msg
-                    );
-                } else {
-                    var msg = "Error getting platform name!";
-                    maintenance_post.statuspage.show_error_message(
-                        maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                        maintenance_post.config.copy_button, msg
-                    );
-                }
+                maintenance_post.get_platform_name(platform_id, title, function(output) {
+                    var arr = JSON.parse(output);
+                    console.log(arr);
+                });
             }
         });
 
@@ -110,19 +101,28 @@ var maintenance_post = {
         }
     },
 
-    get_platform_name: function(platform_id) {
-        var response = -1;
-        response = $.ajax({
+    get_platform_name: function(platform_id, title, handle_data) {
+        $.ajax({
             type: "POST",
             url: "/scripts/get_platform_name.php",
             data: {
                 platform_id: platform_id
             },
             success: function(data) {
-                var arr = JSON.parse(data);
-                if(arr.platform_name != "None") {
-                    response = arr.platform_name;
-                }
+                // var arr = JSON.parse(data);
+                // if(arr.platform_name != "None") {
+                //     var msg = platform_name + ": " + title;
+                //     maintenance_post.statuspage.show_success_message(
+                //         maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
+                //         maintenance_post.config.copy_button, msg
+                //     );
+                // } else {
+                //     var msg = "Error getting platform name!";
+                //     maintenance_post.statuspage.show_error_message(
+                //         maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
+                //         maintenance_post.config.copy_button, msg
+                //     );
+                handle_data(data);
             },
             error: function(data) {
                 var msg = "ERROR: Unable to generate Title! Check your browser's console for debug logs!";
@@ -131,15 +131,12 @@ var maintenance_post = {
                     maintenance_post.config.copy_button, msg
                 );
                 console.log(data);
-                response = -1;
             }
         });
-        return response;
     },
 
-    get_maintenance_details: function(ticket, ref, message) {
-        var response = -1;
-        response = $.ajax({
+    get_maintenance_details: function(ticket, ref, message, handle_data) {
+        $.ajax({
             type: "POST",
             url: "/scripts/validate_maintenance_details.php",
             data: {
@@ -148,22 +145,17 @@ var maintenance_post = {
                 message: message
             },
             success: function(data) {
-                var arr = JSON.parse(data);
-                if(arr.ticket_status === 1 && arr.ref_status === 1) {
-                    response = arr.message;
-                }
+                handle_data(data);
             },
             error: function(data) {
-                var arr = JSON.parse(data);
+                var msg = "ERROR: Unable to validate Ticket Number or Reference Link! Check your browser's console for debug logs!";
                 maintenance_post.statuspage.show_error_message(
                     maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                    maintenance_post.config.copy_button, arr.message
+                    maintenance_post.config.copy_button, msg
                 );
                 console.log(data);
-                response = -1;
             }
         });
-        return response;
     }
 }
 
