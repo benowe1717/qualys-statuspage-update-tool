@@ -39,21 +39,16 @@ var incident_post = {
             
             incident_post.errors(errors);
             if(errors === 0) {
-                var platform_name = incident_post.get_platform_name(incident_post.form_data[0].value);
+                var platform_id = incident_post.form_data[0].value;
                 var title = incident_post.form_data[1].value;
-                if(platform_name !== -1) {
-                    var msg = platform_name + ": " + title;
+                incident_post.get_platform_name(platform_id, function(output) {
+                    var arr = JSON.parse(output);
+                    var msg = incident_post.format_title(arr.platform_name, title);
                     incident_post.statuspage.show_success_message(
                         incident_post.config.alert_div, incident_post.config.alert_message_span,
                         incident_post.config.copy_button, msg
                     );
-                } else {
-                    var msg = "Error getting platform name!";
-                    incident_post.statuspage.show_error_message(
-                        incident_post.config.alert_div, incident_post.config.alert_message_span,
-                        incident_post.config.copy_button, msg
-                    );
-                }
+                });
             }
         });
 
@@ -96,19 +91,20 @@ var incident_post = {
         }
     },
 
-    get_platform_name: function(platform_id) {
-        var response = -1;
-        response = $.ajax({
+    format_title: function(platform_name, title) {
+        var message = platform_name + ": " + title;
+        return message;
+    },
+
+    get_platform_name: function(platform_id, handle_data) {
+        $.ajax({
             type: "POST",
             url: "/scripts/get_platform_name.php",
             data: {
                 platform_id: platform_id
             },
             success: function(data) {
-                var arr = JSON.parse(data);
-                if(arr.platform_name != "None") {
-                    response = arr.platform_name;
-                }
+                handle_data(data);
             },
             error: function(data) {
                 var msg = "ERROR: Unable to generate Title! Check your browser's console for debug logs!";
@@ -117,10 +113,8 @@ var incident_post = {
                     incident_post.config.copy_button, msg
                 );
                 console.log(data);
-                response = -1;
             }
         });
-        return response;
     }
 }
 
