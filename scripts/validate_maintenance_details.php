@@ -69,10 +69,10 @@
         http_response_code(200);
         exit(0);
     } else {
-        $arr["status_code"] = 405;
+        $arr["status_code"] = 400;
         $arr["message"] = "Missing form values!";
         echo(json_encode($arr));
-        http_response_code(405);
+        http_response_code(400);
         exit(1);
     }
 

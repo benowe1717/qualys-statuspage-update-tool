@@ -74,19 +74,28 @@ var maintenance_post = {
                 var message = maintenance_post.form_data[3].value;
                 var ref = maintenance_post.form_data[4].value;
 
-                var msg = maintenance_post.get_maintenance_details(ticket, message, ref);
-                if(msg !== -1) {
-                    maintenance_post.statuspage.show_success_message(
-                        maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                        maintenance_post.config.copy_button, msg
-                    );
-                } else {
-                    var msg = "Ticket Number or Reference Link are invalid!";
-                    maintenance_post.statuspage.show_error_message(
-                        maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
-                        maintenance_post.config.copy_button, msg
-                    );
-                }
+                maintenance_post.get_maintenance_details(ticket, message, ref, function(output) {
+                    var arr = JSON.parse(output);
+                    if(typeof arr["error"] === 'undefined') {
+                        if(arr.ticket_status === 1 && arr.ref_status === 1) {
+                            maintenance_post.statuspage.show_success_message(
+                                maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
+                                maintenance_post.config.copy_button, arr.message
+                            );
+                        } else {
+                            var msg = "Ticket Number or Reference Link are invalid!";
+                            maintenance_post.statuspage.show_error_message(
+                                maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
+                                maintenance_post.config.copy_button, msg
+                            );
+                        }
+                    } else {
+                        maintenance_post.statuspage.show_error_message(
+                            maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
+                            maintenance_post.config.copy_button, arr.message
+                        );
+                    }
+                });
             }
         });
     },
