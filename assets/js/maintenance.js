@@ -74,7 +74,7 @@ var maintenance_post = {
                 var message = maintenance_post.form_data[3].value;
                 var ref = maintenance_post.form_data[4].value;
 
-                maintenance_post.get_maintenance_details(ticket, message, ref, function(output) {
+                maintenance_post.get_maintenance_details(ticket, ref, message, function(output) {
                     var arr = JSON.parse(output);
                     if(typeof arr["error"] === 'undefined') {
                         if(arr.ticket_status === 1 && arr.ref_status === 1) {
