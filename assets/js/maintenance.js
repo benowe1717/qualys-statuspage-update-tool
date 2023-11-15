@@ -46,7 +46,7 @@ var maintenance_post = {
                 maintenance_post.get_platform_name(platform_id, function(output) {
                     var arr = JSON.parse(output);
                     var msg = maintenance_post.format_title(arr.platform_name, title);
-                    maintenance_post.show_success_message(
+                    maintenance_post.statuspage.show_success_message(
                         maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
                         maintenance_post.config.copy_button, msg
                     );
