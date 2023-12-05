@@ -3,7 +3,14 @@
     require_once __DIR__ . "/../includes/logging.class.php";
     $logger = new my_logger();
 
-    $remote_ip = $_SERVER["REMOTE_ADDR"];
+    $headers = getallheaders();
+    if(isset($headers["X-Real-IP"])) {
+        $remote_ip = $headers["X-Real-IP"];
+    } elseif(isset($headers["X-Forwarded-For"])) {
+        $remote_ip = $headers["X-Forwarded-For"];
+    } else {
+        $remote_ip = $_SERVER["REMOTE_ADDR"];
+    }
 
     if(isset($_POST["platform_id"])) {
         $platform_id = intval($_POST["platform_id"]);

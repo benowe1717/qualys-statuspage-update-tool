@@ -7,7 +7,7 @@
         private $program = "php";
         private $pid = -1;
         public $error;
-        public $file = "/var/log/statuspage.log";
+        public $file = "/logs/statuspage.log";
         public $fp;
         public $log_levels = [
             1 => "DEBUG",
