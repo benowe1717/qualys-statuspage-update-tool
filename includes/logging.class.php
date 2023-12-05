@@ -7,20 +7,36 @@
         private $program = "php";
         private $pid = -1;
         public $error;
+        public $file = "/var/log/statuspage.log";
+        public $fp;
+        public $log_levels = [
+            1 => "DEBUG",
+            2 => "INFO",
+            3 => "WARN",
+            4 => "ERROR"
+        ];
 
         function __construct() {
-            $this->hostname = gethostname();
-            $this->pid = getmypid();
-            $this->log_msg("Starting logger...");
+            try {
+                if($this->fp = fopen($this->file, "a")) {
+                    $this->hostname = gethostname();
+                    $this->pid = getmypid();
+                    $this->log_msg("Starting logger...");
+                }
+            } catch(Exception $e) {
+                $this->error = $e;
+                file_put_contents("/tmp/error", $this->error);
+            }
         }
 
-        public function log_msg(string $msg) {
+        public function log_msg(string $msg, int $log_level = 2) {
+            $now = date($this->date_format);
+            $message = "{$now} {$this->hostname} {$this->program}[{$this->pid}] [{$this->log_levels[$log_level]}] {$msg}\n";
             try{
-                $now = date($this->date_format);
-                $message = "{$now} {$this->hostname} {$this->program}[{$this->pid}] {$msg}";
-                error_log($message);
+                fwrite($this->fp, $message);
             } catch(Exception $e) {
-                file_put_contents("/tmp/error", $e, FILE_APPEND | LOCK_EX);
+                $this->error = $e;
+                file_put_contents("/tmp/fwrite_error", $this->error);
             }
         }
 
