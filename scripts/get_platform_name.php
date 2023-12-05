@@ -1,7 +1,13 @@
 <?php
 
+    require_once __DIR__ . "/../includes/logging.class.php";
+    $logger = new my_logger();
+
+    $remote_ip = $_SERVER["REMOTE_ADDR"];
+
     if(isset($_POST["platform_id"])) {
         $platform_id = intval($_POST["platform_id"]);
+        $logger->log_msg("[INFO] {$remote_ip} requested platform_id {$platform_id}");
 
         require_once __DIR__ . "/../includes/redis.class.php";
         $redis = new myRedis();
