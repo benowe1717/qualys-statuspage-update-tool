@@ -4,6 +4,7 @@ var maintenance_post = {
             title_button: $("#maintenance-title-button"),
             message_button: $("#maintenance-message-button"),
             copy_button: $("#maintenance-copy-button"),
+            copy_from: $("#maintenance-copy"),
             form: $("#maintenance"),
             title_fields: [
                 "maintenance-platform",
@@ -26,6 +27,7 @@ var maintenance_post = {
 
     setup: function() {
         $(maintenance_post.config.title_button).on("click", function() {
+            maintenance_post.config.copy_button.text("Copy to Clipboard");
             maintenance_post.form_data = $(maintenance_post.config.form).serializeArray();
             var errors = 0;
             for(const element of maintenance_post.form_data) {
@@ -50,11 +52,13 @@ var maintenance_post = {
                         maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
                         maintenance_post.config.copy_button, msg
                     );
+                    maintenance_post.config.copy_from.val(msg);
                 });
             }
         });
 
         $(maintenance_post.config.message_button).on("click", function() {
+            maintenance_post.config.copy_button.text("Copy to Clipboard");
             maintenance_post.form_data = $(maintenance_post.config.form).serializeArray();
             var errors = 0;
             for(const element of maintenance_post.form_data) {
@@ -82,6 +86,7 @@ var maintenance_post = {
                                 maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
                                 maintenance_post.config.copy_button, arr.message
                             );
+                            maintenance_post.config.copy_from.val(arr.message);
                         } else {
                             var msg = "Ticket Number or Reference Link are invalid!";
                             maintenance_post.statuspage.show_error_message(

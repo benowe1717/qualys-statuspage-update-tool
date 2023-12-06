@@ -4,6 +4,7 @@ var incident_post = {
             title_button: $("#incident-title-button"),
             message_button: $("#incident-message-button"),
             copy_button: $("#incident-copy-button"),
+            copy_from: $("#incident-copy"),
             form: $("#incident"),
             title_fields: [
                 "incident-platform",
@@ -24,6 +25,7 @@ var incident_post = {
 
     setup: function() {
         $(incident_post.config.title_button).on("click", function() {
+            incident_post.config.copy_button.text("Copy to Clipboard");
             incident_post.form_data = $(incident_post.config.form).serializeArray();
             var errors = 0;
             for(const element of incident_post.form_data) {
@@ -48,11 +50,13 @@ var incident_post = {
                         incident_post.config.alert_div, incident_post.config.alert_message_span,
                         incident_post.config.copy_button, msg
                     );
+                    incident_post.config.copy_from.val(msg);
                 });
             }
         });
 
         $(incident_post.config.message_button).on("click", function() {
+            incident_post.config.copy_button.text("Copy to Clipboard");
             incident_post.form_data = $(incident_post.config.form).serializeArray();
             var errors = 0;
             for(const element of incident_post.form_data) {
@@ -73,6 +77,7 @@ var incident_post = {
                     incident_post.config.alert_div, incident_post.config.alert_message_span,
                     incident_post.config.copy_button, msg
                 );
+                incident_post.config.copy_from.val(msg);
             }
         });
     },
