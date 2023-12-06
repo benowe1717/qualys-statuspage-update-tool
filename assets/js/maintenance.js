@@ -86,7 +86,7 @@ var maintenance_post = {
                                 maintenance_post.config.alert_div, maintenance_post.config.alert_message_span,
                                 maintenance_post.config.copy_button, arr.message
                             );
-                            maintenance_post.config.copy_from.val(msg);
+                            maintenance_post.config.copy_from.val(arr.message);
                         } else {
                             var msg = "Ticket Number or Reference Link are invalid!";
                             maintenance_post.statuspage.show_error_message(
