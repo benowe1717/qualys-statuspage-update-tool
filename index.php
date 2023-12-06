@@ -66,7 +66,10 @@
                         <div class="col-md-12">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <span>- Added more client-side validation through red highlighting of invalid/empty form fields</span>
+                                    <span>- Added logging to the backend for troubleshooting</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>- Fixed a bug where the Copy to Clipboard button wasn't copying any text</span>
                                 </li>
                             </ul>
                         </div>
