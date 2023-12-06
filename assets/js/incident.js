@@ -25,6 +25,7 @@ var incident_post = {
 
     setup: function() {
         $(incident_post.config.title_button).on("click", function() {
+            incident_post.config.copy_button.text("Copy to Clipboard");
             incident_post.form_data = $(incident_post.config.form).serializeArray();
             var errors = 0;
             for(const element of incident_post.form_data) {
@@ -55,6 +56,7 @@ var incident_post = {
         });
 
         $(incident_post.config.message_button).on("click", function() {
+            incident_post.config.copy_button.text("Copy to Clipboard");
             incident_post.form_data = $(incident_post.config.form).serializeArray();
             var errors = 0;
             for(const element of incident_post.form_data) {
