@@ -4,6 +4,7 @@ var incident_post = {
             title_button: $("#incident-title-button"),
             message_button: $("#incident-message-button"),
             copy_button: $("#incident-copy-button"),
+            copy_from: $("#incident-copy"),
             form: $("#incident"),
             title_fields: [
                 "incident-platform",
@@ -48,6 +49,7 @@ var incident_post = {
                         incident_post.config.alert_div, incident_post.config.alert_message_span,
                         incident_post.config.copy_button, msg
                     );
+                    incident_post.config.copy_from.val(msg);
                 });
             }
         });
@@ -73,6 +75,7 @@ var incident_post = {
                     incident_post.config.alert_div, incident_post.config.alert_message_span,
                     incident_post.config.copy_button, msg
                 );
+                incident_post.config.copy_from.val(msg);
             }
         });
     },
