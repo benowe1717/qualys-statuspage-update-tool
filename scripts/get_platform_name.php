@@ -41,7 +41,7 @@
             exit(0);
         }
     } else {
-        $logger->log_msg("Wrong HTTP Method of {$_SERVER['REQUEST_METHOD']} from {$_SERVER['REMOTE_ADDR']}", 3);
+        $logger->log_msg("Wrong HTTP Method of {$_SERVER['REQUEST_METHOD']} from {$remote_ip}", 3);
         http_response_code(405);
         exit(1);
     }
