@@ -41,12 +41,11 @@ Thanks to the following people who have contributed to this project:
 
 For help or support on this repository, follow these steps:
 
-- Link to the Issues tab for this repo
-- Link to the Asana form for this work
+- Fill out an issue [here](https://github.com/benowe1717/qualys-statuspage-update-tool/issues)
 
 ## License
 
-This project uses the following license: [qualys_license].
+This project uses the following license: [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 ## Sources
 

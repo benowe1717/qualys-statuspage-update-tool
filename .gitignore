@@ -1,1 +1,6 @@
-.creds.ini
+old_files/
+bin/*
+.env
+var/cache/*
+var/logs/*
+vendor/*
