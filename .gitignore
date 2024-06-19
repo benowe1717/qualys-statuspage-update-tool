@@ -4,3 +4,10 @@ bin/*
 var/cache/*
 var/logs/*
 vendor/*
+.phpactor.json
+.php-cs-fixer.cache
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
