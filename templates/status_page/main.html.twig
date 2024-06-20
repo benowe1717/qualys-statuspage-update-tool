@@ -16,6 +16,9 @@
                         <label class="form-label" for="incident-platform">Platform</label>
                         <select class="form-select" required="" id="incident-platform" name="incident-platform">
                             <option value="" selected="">Select...</option>
+                            {% for key, value in platforms %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
                             <!-- <?php -->
                             <!--     require __DIR__ . "/scripts/platforms.php"; -->
                             <!-- ?> -->
@@ -53,6 +56,9 @@
                         <label class="form-label">Platform</label>
                         <select class="form-select" required="" id="maintenance-platform" name="maintenance-platform">
                             <option value="" selected="">Select...</option>
+                            {% for key, value in platforms %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
                             <!-- <?php -->
                             <!--     require __DIR__ . "/scripts/platforms.php"; -->
                             <!-- ?> -->
