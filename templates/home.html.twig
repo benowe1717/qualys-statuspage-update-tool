@@ -1,4 +1,5 @@
 {% block main %}
+
 <div class="container-fluid m-3">
     <div class="row">
         <div class="col-md-12">
@@ -7,44 +8,41 @@
         </div>
     </div>
 </div>
-<div class="container-fluid m-3">
-    <div>
-        <ul class="nav nav-tabs" role="tablist">
+<div class="container mt-3 ms-1">
+    <nav>
+        <ul class="nav nav-tabs" id="home" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Patch Notes</a>
+                <a class="nav-link active" id="patchnotes-tab" data-bs-toggle="tab" data-bs-target="#patchnotes-tab-pane" href="#patchnotes-tab" role="tab" aria-controls="patchnotes-tab-pane" aria-selected="true">Patch Notes</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Known Issues</a>
+                <a class="nav-link" id="knownissues-tab" data-bs-toggle="tab" data-bs-target="#knownissues-tab-pane" href="#knownissues-tab" role="tab" aria-controls="knownissues-tab-pane" aria-selected="false">Known Issues</a>
             </li>
         </ul>
-        <div class="tab-content">
-            <div id="tab-1" class="tab-pane active" role="tabpanel">
+        <div class="tab-content" id="homeContent">
+            <div class="tab-pane show active" id="patchnotes-tab-pane" role="tabpanel" aria-labelledby="patchnotes-tab" tabindex="0">
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-group">
                             {% for note in patch_notes %}
-                                <li class="list-group-item">
-                                    <span>- {{ note }}</span
-                                </li>
+                                <li class="list-group-item"><span>- {{ note }}</span></li>
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
-            <div id="tab-2" class="tab-pane" role="tabpanel">
+            <div class="tab-pane" id="knownissues-tab-pane" role="tabpanel" aria-labelledby="knownissues-tab" tabindex="0">
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-group">
                             {% for issue in known_issues %}
-                                <li class="list-group-item">
-                                    <span>- {{ issue }}</span
-                                </li>
+                                <li class="list-group-item"><span>- {{ issue }}</span></li>
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
 </div>
+
 {% endblock %}
