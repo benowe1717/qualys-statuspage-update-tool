@@ -1,0 +1,113 @@
+{% block main %}
+{% form_theme incidentform 'form/form_errors.html.twig' %}
+{% form_theme maintform 'form/form_errors.html.twig' %}
+
+<div class="container mt-3 ms-1">
+    <nav>
+        <ul class="nav nav-tabs" id="statusPage" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link {{ active_tab == 'incident' ? 'active' }}" id="incident-tab" data-bs-toggle="tab" data-bs-target="#incident-tab-pane" href="#incident-tab" role="tab" aria-controls="incident-tab-pane" aria-selected="false">Incident Update</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link {{ active_tab == 'maintenance' ? 'active' }}" id="maintenance-tab" data-bs-toggle="tab" data-bs-target="#maintenance-tab-pane" href="#maintenance-tab" role="tab" aria-controls="maintenance-tab-pane" aria-selected="false">Scheduled Maintenance Update</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="tab-content" id="statusPageContent">
+        <div class="tab-pane {{ active_tab == 'incident' ? 'show active' }}" id="incident-tab-pane" role="tabpanel" aria-labelledby="incident-tab" tabindex="0">
+            {{ form_start(incidentform, {'attr': {novalidate: 'novalidate', 'class': 'needs-validation', 'id': 'incident-form'}}) }}
+                <div class="mb-3 mt-2">
+                    {{ form_label(incidentform.platform, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(incidentform.platform, {'attr': {'class': 'form-select'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(incidentform.title, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(incidentform.title, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(incidentform.message, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(incidentform.message, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="btn-group border rounded-pill" role="group">
+                    {{ form_widget(incidentform.generate_post, {'attr': {'class': 'btn border-light'}}) }}
+                    {{ form_widget(incidentform.reset_form, {'attr': {'class': 'btn btn-reset border-light'}}) }}
+                </div>
+            {{ form_end(incidentform) }}
+        </div>
+        <div class="tab-pane {{ active_tab == 'maintenance' ? 'show active' }}" id="maintenance-tab-pane" role="tabpanel" aria-labelledby="maintenance-tab" tabindex="0">
+            {{ form_start(maintform, {'attr': {novalidate: 'novalidate', 'class': 'needs-validation', 'id': 'maintenance-form'}}) }}
+                <div class="mb-3 mt-2">
+                    {{ form_label(maintform.platform, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(maintform.platform, {'attr': {'class': 'form-select'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(maintform.title, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(maintform.title, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(maintform.ticket_number, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(maintform.ticket_number, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(maintform.message, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(maintform.message, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(maintform.reference_link, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(maintform.reference_link, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="btn-group border rounded-pill" role="group">
+                    {{ form_widget(maintform.generate_post, {'attr': {'class': 'btn border-light'}}) }}
+                    {{ form_widget(maintform.reset_form, {'attr': {'class': 'btn btn-reset border-light'}}) }}
+                </div>
+            {{ form_end(maintform) }}
+        </div>
+    </div>
+</div>
+<div class="container mt-3 ms-1">
+    <div class="row mt-3">
+        <div class="col-12">
+            {% if incident_title %}
+                <p class="visually-hidden" id="title-copy">{{ incident_title }}</p>
+            {% endif %}
+            {% if incident_message %}
+                <p class="visually-hidden" id="message-copy">{{ incident_message }}</p>
+            {% endif %}
+        </div>
+        <div class="col-12">
+            {% if maintenance_title %}
+                <p class="visually-hidden" id="title-copy">{{ maintenance_title }}</p>
+            {% endif %}
+            {% if maintenance_message %}
+                <p class="visually-hidden" id="message-copy">{{ maintenance_message }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            {% if errors > 0 %}
+                <div class="alert alert-danger" id="statusPageOutput">
+                    {{ form_errors(incidentform.platform) }}
+                    {{ form_errors(incidentform.title) }}
+                    {{ form_errors(incidentform.message) }}
+                    {{ form_errors(maintform.platform) }}
+                    {{ form_errors(maintform.title) }}
+                    {{ form_errors(maintform.ticket_number) }}
+                    {{ form_errors(maintform.message) }}
+                    {{ form_errors(maintform.reference_link) }}
+                </div>
+            {% endif %}
+            {% if submitted == 1 %}
+                <div class="alert alert-success" id="statusPageOutput">
+                    <p>{{ incident_title }}</p>
+                    <p>{{ incident_message }}</p>
+                    <p>{{ maintenance_title }}</p>
+                    <p>{{ maintenance_message }}</p>
+                </div>
+                <button class="btn" type="button" data-clipboard-target="#title-copy" data-clipboard-action="copy" id="title-copy-button">Copy Title to Clipboard</button>
+                <button class="btn" type="button" data-clipboard-target="#message-copy" data-clipboard-action="copy" id="message-copy-button">Copy Message to Clipboard</button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

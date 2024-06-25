@@ -1,0 +1,28 @@
+{% block navbar %}
+{% set route = app.request.get('_route') %}
+
+<nav class="navbar navbar-expand-md py-3" style="--bs-body-bg: #f4f6f8;--bs-body-color: #262626;background-color: var(--bs-body-bg);color: #262626;">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <span class="bs-icon-sm d-flex justify-content-center align-items-center me-2 bs-icon">
+                <img class="img-fluid" src="/images/Shield-Medium.png">
+            </span>
+            <span>Support Tools</span>
+        </a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ route == 'app_home' ? 'active' }}" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ route == 'app_status_page' ? 'active' }}" href="/status_page">Status Page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
