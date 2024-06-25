@@ -1,5 +1,5 @@
 old_files/
-bin/*
+composer.lock
 .env
 .env.local.php
 var/cache/*
