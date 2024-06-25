@@ -19,6 +19,22 @@ To use StatusPage Update Tool, follow these steps:
 - To make an Incident Post, follow the instructions here: [Making an Incident Post](https://github.com/benowe1717/qualys-statuspage-update-tool/blob/main/docs/incident_post.md)
 - To make a Scheduled Maintenance Post, follow the instructions here: [Making a Maintenance Update Post](https://github.com/benowe1717/qualys-statuspage-update-tool/blob/main/docs/maintenance_post.md)
 
+## Screenshots
+
+![home screen](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/home.png)
+
+![incident_update](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/incident_update.png)
+
+![incident_update_submitted](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/incident_update_submitted.png)
+
+![incident_update_copied](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/incident_update_copied.png)
+
+![maintenance_update](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/maintenance_update.png)
+
+![maintenance_update_submitted](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/maintenance_update_submitted.png)
+
+![maintenance_update_copied](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/maintenance_update_copied.png)
+
 ## Contributing to StatusPage Update Tool
 
 To contribute to StatusPage Update Tool, follow these steps:
