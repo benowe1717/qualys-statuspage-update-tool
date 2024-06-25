@@ -1,6 +1,7 @@
 old_files/
 bin/*
 .env
+.env.local.php
 var/cache/*
 var/logs/*
 vendor/*

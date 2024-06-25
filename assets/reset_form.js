@@ -3,7 +3,9 @@ function reset_form(form_id) {
         ":button, :submit, :reset, :hidden"
     ).val("").prop("checked", false).prop(
         "selected", false
-    ).toggleClass("form-error", false);
+    );
+
+    $(form_id).removeClass("was-validated");
 
     $("#statusPageOutput").text("");
     $("#statusPageOutput").addClass("visually-hidden");
