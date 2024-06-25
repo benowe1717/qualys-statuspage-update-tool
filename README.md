@@ -19,6 +19,22 @@ To use StatusPage Update Tool, follow these steps:
 - To make an Incident Post, follow the instructions here: [Making an Incident Post](https://github.com/benowe1717/qualys-statuspage-update-tool/blob/main/docs/incident_post.md)
 - To make a Scheduled Maintenance Post, follow the instructions here: [Making a Maintenance Update Post](https://github.com/benowe1717/qualys-statuspage-update-tool/blob/main/docs/maintenance_post.md)
 
+## Screenshots
+
+[home screen](https://github.com/benowe1717/qualys-statuspage-update-tool/tree/main/docs/home.png?raw=true)
+
+[incident_update]()
+
+[incident_update_submitted]()
+
+[incident_update_copied]()
+
+[maintenance_update]()
+
+[maintenance_update_submitted]()
+
+[maintenance_update_copied]()
+
 ## Contributing to StatusPage Update Tool
 
 To contribute to StatusPage Update Tool, follow these steps:
