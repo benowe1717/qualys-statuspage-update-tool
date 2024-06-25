@@ -16,8 +16,8 @@ No installation necessary, all of this exists in your web browser!
 
 To use StatusPage Update Tool, follow these steps:
 
-- To make an Incident Post, follow the instructions here: docs/incident_post.md
-- To make a Scheduled Maintenance Post, follow the instructions here: docs/maintenance_post.md
+- To make an Incident Post, follow the instructions here: [Making an Incident Post](https://github.com/benowe1717/qualys-statuspage-update-tool/blob/main/docs/incident_post.md)
+- To make a Scheduled Maintenance Post, follow the instructions here: [Making a Maintenance Update Post](https://github.com/benowe1717/qualys-statuspage-update-tool/blob/main/docs/maintenance_post.md)
 
 ## Contributing to StatusPage Update Tool
 

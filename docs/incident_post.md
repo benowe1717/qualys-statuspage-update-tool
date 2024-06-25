@@ -11,7 +11,7 @@ Incident Posts are for any type of update/post where an active issue/outage is o
 
 To generate an Incident Post Title:
 
-1. Navigate to the following URL: https://qualys.projecttiy.com/status_page.php
+1. Navigate to the following URL: https://qualys.projecttiy.com/status_page#incident-tab
 2. Select the Incident Update tab
 3. Select the affected Platform in the dropdown menu
 4. Enter in the Title (without the Platform)
@@ -28,7 +28,7 @@ To generate an Incident Message:
 
 - *If you've already generated a title, skip to step 3*
 
-1. Navigate to the following URL: https://qualys.projecttiy.com/status_page.php
+1. Navigate to the following URL: https://qualys.projecttiy.com/status_page#incident-tab
 2. Select the Incident Update tab
 3. Enter in the Message
     - Example: Users are not able to access QualysGuard for KSA Platform 1. Cloud Platform Operations team is actively investigating and further updates will be shared as they are received.

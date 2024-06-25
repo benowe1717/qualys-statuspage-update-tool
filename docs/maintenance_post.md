@@ -8,7 +8,7 @@ Maintenance Posts are for any type of update/post where a new release is coming 
 
 To generate an Maintenance Post Title:
 
-1. Navigate to the following URL: https://qualys.projecttiy.com/status_page.php
+1. Navigate to the following URL: https://qualys.projecttiy.com/status_page#maintenance-tab
 2. Select the Scheduled Maintenance Update tab
 3. Select the affected Platform in the dropdown menu
 4. Enter in the Title (without the Platform)
@@ -24,7 +24,7 @@ To generate an Maintenance Post Title:
 To generate a Maintenance Message:
 
 - *If you've already generated a title, skip to step 3*
-1. Navigate to the following URL: https://qualys.projecttiy.com/status_page.php
+1. Navigate to the following URL: https://qualys.projecttiy.com/status_page#maintenance-tab
 2. Select the Scheduled Maintenance Update tab
 3. Enter in the Ticket Number
     - **NOTE**: This should be in a format such as CMB-123456 (2-3 letters, a hypen, then digits)
