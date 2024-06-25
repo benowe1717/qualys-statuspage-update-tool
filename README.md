@@ -21,19 +21,19 @@ To use StatusPage Update Tool, follow these steps:
 
 ## Screenshots
 
-[home screen](https://github.com/benowe1717/qualys-statuspage-update-tool/tree/main/docs/home.png?raw=true)
+[home screen](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/home.png)
 
-[incident_update]()
+[incident_update](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/incident_update.png)
 
-[incident_update_submitted]()
+[incident_update_submitted](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/incident_update_submitted.png)
 
-[incident_update_copied]()
+[incident_update_copied](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/incident_update_copied.png)
 
-[maintenance_update]()
+[maintenance_update](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/maintenance_update.png)
 
-[maintenance_update_submitted]()
+[maintenance_update_submitted](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/maintenance_update_submitted.png)
 
-[maintenance_update_copied]()
+[maintenance_update_copied](https://raw.githubusercontent.com/benowe1717/qualys-statuspage-update-tool/documentation-update-with-images/docs/maintenance_update_copied.png)
 
 ## Contributing to StatusPage Update Tool
 
